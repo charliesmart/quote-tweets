@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('chrome-extension://__MSG_@@extension_id__/fonts/icomoon.eot?foo5ii');
+  src:  url('chrome-extension://__MSG_@@extension_id__/fonts/icomoon.eot?foo5ii#iefix') format('embedded-opentype'),
+    url('chrome-extension://__MSG_@@extension_id__/fonts/icomoon.ttf?foo5ii') format('truetype'),
+    url('chrome-extension://__MSG_@@extension_id__/fonts/icomoon.woff?foo5ii') format('woff'),
+    url('chrome-extension://__MSG_@@extension_id__/fonts/icomoon.svg?foo5ii#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.quote-button {
+  position: relative;
+  font-size: 20px;
+  padding: 0;
+  display: inline-block;
+  vertical-align: bottom;
+  height: 18px;
+  left: -16px;
+  color: #657786;
+  text-decoration: none;
+}
+
+.quote-button:hover {
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+.quote-button:after {
+  font-family: 'icomoon';
+  content: 'q';
+}
