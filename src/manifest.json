@@ -1,7 +1,7 @@
 {
   "name": "Quote Tweet Viewer",
-  "description": "Adds a “see quote tweets” button to Twitter. Quote icon by Recep Kutuk.",
-  "version": "0.1.0",
+  "description": "Adds a “see quote tweets” button to Twitter.",
+  "version": "0.1.1",
   "manifest_version": 2,
   "web_accessible_resources": [
     "fonts/*"

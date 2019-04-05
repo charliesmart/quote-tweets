@@ -6,34 +6,30 @@ const observerConfig = {
 
 const observer = new MutationObserver(handleNewTweets);
 const searchURLPrefix = 'https://twitter.com/search?q=';
-const twitterURLPrefix = 'https://twitter.com'
-
-window.onpopstate = init;
+const twitterURLPrefix = 'https://twitter.com';
 
 // Handle the tweets that come pre-loaded
 function init() {
-  // Grab the stream to observe
-  let $stream = document.getElementById('page-container');
-
-  // Observe it
+  // Observe the page body for changes, including new tweets or navigation
   observer.observe(document.body, observerConfig);
 
-  let $tweets = document.querySelectorAll('.js-stream-tweet:not(.quote-added)');
+  grabTweets(document);
+}
+
+function grabTweets($el) {
+  let $tweets = $el.querySelectorAll('.js-stream-tweet:not(.quote-added)');
   [].forEach.call($tweets, addButtonToTweet);
 }
 
 // Handle tweets as they're added to the stream
 function handleNewTweets(mutations) {
   mutations.forEach(mutation => {
-    //console.log(mutation);
-    // For each added node (a node can include a thread of tweets),
+    // For each added node (a node can include a thread of tweets)...
     mutation.addedNodes.forEach($node => {
-      // Grab the tweets
-      // console.log($node);
+      // If it's a DOM element...
       if ($node.nodeType === Node.ELEMENT_NODE) {
-        let $tweets = $node.querySelectorAll('.js-stream-tweet:not(.quote-added)');
-        // Add the buttons
-        [].forEach.call($tweets, addButtonToTweet);
+        // Grab all the tweets inside
+        grabTweets($node);
       }
     })
   });
