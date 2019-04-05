@@ -21,8 +21,10 @@
     }
   ],
   "icons": {
-    "16": "icons/quote_16.png",
-    "32": "icons/quote_32.png",
-    "128": "icons/quote_128.png"
+    "16": "icons/icon_16.png",
+    "48": "icons/icon_48.png",
+    "32": "icons/icon_32.png",
+    "128": "icons/icon_128.png",
+    "256": "icons/icon_256.png"
   }
 }
